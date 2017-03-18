@@ -8,23 +8,30 @@ import DialogSlot from '../components/DialogSlot'
 import ServerStatus from '../components/ServerStatus'
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <div className='application'>
         <ServerStatus />
         <header>
-          <BreadCrumbs {...this.getRoutingProps()}>
-            <button type='button' className='navbar-toggle'
-              data-toggle='offcanvas'
-              data-target='.sidebar-block'>
-              <span className='sr-only'>Toggle navigation</span>
-              <span className='icon-list' />
-              <span className='icon-list' />
-              <span className='icon-list' />
-            </button>
-          </BreadCrumbs>
+          <div className="container-fluid">
+            <div className="col-md-2 col-sm-3">
+              <h2>Lektor Admin</h2>
+            </div>
+            <div className="col-md-10 col-sm-9">
+              <BreadCrumbs {...this.getRoutingProps()}>
+                <button type='button' className='navbar-toggle'
+                        data-toggle='offcanvas'
+                        data-target='.sidebar-block'>
+                  <span className='sr-only'>Toggle navigation</span>
+                  <span className='icon-list'/>
+                  <span className='icon-list'/>
+                  <span className='icon-list'/>
+                </button>
+              </BreadCrumbs>
+            </div>
+          </div>
         </header>
-        <div className='editor container'>
+        <div className='editor container-fluid'>
           <DialogSlot {...this.getRoutingProps()} />
           <div className='sidebar-block block-offcanvas block-offcanvas-left'>
             <nav className='sidebar col-md-2 col-sm-3 sidebar-offcanvas'>

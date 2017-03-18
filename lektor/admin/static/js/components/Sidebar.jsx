@@ -165,6 +165,7 @@ class Sidebar extends RecordComponent {
     links.push(
       <li key='edit'>
         <Link to={`${urlPath}/edit`}>
+          <i className="fa fa-edit"></i>
           {this.state.isAttachment
            ? i18n.trans('EDIT_METADATA')
            : i18n.trans('EDIT')}
@@ -174,13 +175,13 @@ class Sidebar extends RecordComponent {
 
     if (this.state.canBeDeleted) {
       links.push(
-        <li key='delete'><Link to={`${urlPath}/delete`}>
+        <li key='delete'><Link to={`${urlPath}/delete`}><i className="fa fa-remove"></i>
           {i18n.trans('DELETE')}</Link></li>
       )
     }
 
     links.push(
-      <li key='preview'><Link to={`${urlPath}/preview`}>
+      <li key='preview'><Link to={`${urlPath}/preview`}><i className="fa fa-eye"></i>
         {i18n.trans('PREVIEW')}</Link></li>
     )
 
@@ -188,6 +189,7 @@ class Sidebar extends RecordComponent {
       links.push(
         <li key='fs-open'>
           <a href='#' onClick={this.fsOpen.bind(this)}>
+            <i className="fa fa-file"></i>
             {getBrowseButtonTitle()}
           </a>
         </li>
@@ -196,14 +198,14 @@ class Sidebar extends RecordComponent {
 
     if (this.state.canHaveChildren) {
       links.push(
-        <li key='add-child'><Link to={`${urlPath}/add-child`}>
+        <li key='add-child'><Link to={`${urlPath}/add-child`}><i className="fa fa-plus"></i>
           {i18n.trans('ADD_CHILD_PAGE')}</Link></li>
       )
     }
 
     if (this.state.canHaveAttachments) {
       links.push(
-        <li key='add-attachment'><Link to={`${urlPath}/upload`}>
+        <li key='add-attachment'><Link to={`${urlPath}/upload`}><i className="fa fa-paperclip"></i>
           {i18n.trans('ADD_ATTACHMENT')}</Link></li>
       )
     }
